@@ -19,7 +19,7 @@ else {
 		$list = explode("\n",shell_exec("cd $modx_pkg_name; find . |grep modextra"));
 		foreach(array_reverse($list) as $value) {
 			if($value !== "" && file_exists("$modx_pkg_name/".end(explode("./",$value, 0)))) {
-				shell_exec("cd $modx_pkg_name; mv $value ".str_replace("modextra",$modx_pkg_name, $value));
+				shell_exec("cd $modx_pkg_name; mv $value ".str_replace("modextra",strtolower($modx_pkg_name), $value));
 			}
 		}
 		unset($value);
