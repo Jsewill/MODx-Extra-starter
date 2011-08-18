@@ -1,7 +1,7 @@
 <?php
 
 if($argc < 2) {
-	echo "\n\tbuild_structure.php <project_name_ucfirst_plural>\n";
+	echo "\n\tbuild_structure.php <project_name_ucfirst_plural> <copyright_info_path>\n";
 }
 else {
 	$modx_pkg_name = $argv[1];
