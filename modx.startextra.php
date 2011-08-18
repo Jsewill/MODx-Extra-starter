@@ -5,7 +5,7 @@ if($argc < 2) {
 }
 else {
 	$modx_pkg_name = $argv[1];
-	echo shell_exec("git clone http://github.com/splittingred/modExtra.git ./modExtra; cd modExtra; mkdir ../$modx_pkg_name; git archive HEAD | (cd ../$modx_pkg_name/ && tar -xvf -); cd ../$modx_pkg_name; grep -rl 'modExtra' . | xargs sed -i '' -e 's/modExtra/$modx_pkg_name/g'; grep -rl 'modextra' . | xargs sed -i '' -e 's/modextra/".strtolower($modx_pkg_name)."/g'; grep -rl 'Item' . | xargs sed -i '' -e 's/Item/".substr($modx_pkg_name,0,-1)."/g'; grep -rl 'item' . | xargs sed -i '' -e 's/item/".strtolower(substr($modx_pkg_name,0,-1))."/g'; grep -rl 'active".substr($modx_pkg_name,0,-1)."' . | xargs sed -i '' -e 's/active".substr($modx_pkg_name,0,-1)."/activeItem/g';");
+	echo shell_exec("git clone http://github.com/splittingred/modExtra.git ./modExtra; cd modExtra; mkdir ../$modx_pkg_name; git archive HEAD | (cd ../$modx_pkg_name/ && tar -xvf -); cd ../$modx_pkg_name; grep -rl 'modExtra' . | xargs sed -i '' -e 's/modExtra/$modx_pkg_name/g'; grep -rl 'modextra' . | xargs sed -i '' -e 's/modextra/".strtolower($modx_pkg_name)."/g'; grep -rl 'Item' . | xargs sed -i '' -e 's/Item/".substr($modx_pkg_name,0,-1)."/g'; grep -rl 'item' . | xargs sed -i '' -e 's/item/".strtolower(substr($modx_pkg_name,0,-1))."/g'; grep -rl 'active".substr($modx_pkg_name,0,-1)."' . | xargs sed -i '' -e 's/active".substr($modx_pkg_name,0,-1)."/activeItem/g'; grep -rl ',location' . | xargs sed -i '' -e 's/,location/,item/g';");
 
 	$list = explode("\n",shell_exec("cd $modx_pkg_name; find . |grep modextra"));
 
