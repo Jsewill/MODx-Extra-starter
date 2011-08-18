@@ -25,4 +25,4 @@ The first arguement passed to the script is the name of your Extra (i.e Doodles)
 
 I tried to find anything this might break, but there still may be important (ExtJS type) things replaced.  It is a work in progress.
 
-The second parameter is a path to a file with copyright and license information, in case your name isn't Shaun McCormick.  Perhaps you don't want to release your MODx Extra under the GPL.
+The second parameter is a path to a file with copyright and license information, in case your name isn't Shaun McCormick.  ;-)  Perhaps you don't want to release your MODx Extra under the GPL.
