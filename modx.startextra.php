@@ -1,7 +1,7 @@
 <?php
 
 if($argc < 2) {
-	echo "\n\tbuild_structure.php <project_name_ucfirst_plural> <copyright_info_path>\n";
+	echo "\n\tbuild_structure.php <project_name_ucfirst_plural>\n";
 }
 else {
 	$modx_pkg_name = $argv[1];
@@ -37,19 +37,19 @@ else {
 	echo "Done\n";
 	if(file_exists($argv[2])) {
 		echo "\nStarting Copyright string replacement\n";
-		$copystring = " * Copyright 2010 by Shaun McCormick <shaun+modextra@modx.com>
+		$copystring = " * Copyright 2010 by Shaun McCormick <shaun+".strtolower($modx_pkg_name)."@modx.com>
  *
- * modExtra is free software; you can redistribute it and/or modify it under the
+ * ".$modx_pkg_name." is free software; you can redistribute it and/or modify it under the
  * terms of the GNU General Public License as published by the Free Software
  * Foundation; either version 2 of the License, or (at your option) any later
  * version.
  *
- * modExtra is distributed in the hope that it will be useful, but WITHOUT ANY
+ * ".$modx_pkg_name." is distributed in the hope that it will be useful, but WITHOUT ANY
  * WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR
  * A PARTICULAR PURPOSE. See the GNU General Public License for more details.
  *
  * You should have received a copy of the GNU General Public License along with
- * modExtra; if not, write to the Free Software Foundation, Inc., 59 Temple
+ * ".$modx_pkg_name."; if not, write to the Free Software Foundation, Inc., 59 Temple
  * Place, Suite 330, Boston, MA 02111-1307 USA
 ";
 
